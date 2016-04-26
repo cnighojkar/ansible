@@ -1,0 +1,9 @@
+---
+# tasks file for ansible
+- name: (DEBIAN) install python-pip and python-dev 
+  apt: name={{ item }} state=present update_cache=yes
+  with_items:
+    - "{{ prereq_ubuntu }}"
+
+- name: (DEBIAN) install ansible
+  pip: name=ansible version="{{ ansible_ver }}"

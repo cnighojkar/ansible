@@ -1,0 +1,17 @@
+---
+# tasks file for ansible
+- name: (REDHAT) install prerequisite softwares 
+  yum: name={{ item }} state=present
+  with_items:
+    - "{{ prereq_redhat }}"
+
+- name: (REDHAT) install the 'Development tools' package group
+  yum: name="@Development tools" state=present
+
+- name: (REDHAT) pip install software requirment
+  pip: name={{ item }}
+  with_items:
+    - "{{ pipreq }}"
+
+- name: (REDHAT) install ansible "{{ ansible_ver }}"
+  pip: name=ansible version="{{ ansible_ver }}"

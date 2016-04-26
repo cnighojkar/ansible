@@ -1,0 +1,22 @@
+---
+# defaults file for ansible
+
+ansible_ver: 2.0.1.0
+
+prereq_ubuntu:
+    - software-properties-common
+    - python-pip
+    - python-dev
+
+prereq_redhat:
+    - python-pip
+    - python-setuptools
+    - openssl-devel
+    - python-devel
+
+pipreq:
+    - paramiko
+    - PyYAML
+    - Jinja2
+    - httplib2
+    - six
